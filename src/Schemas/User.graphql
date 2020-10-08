@@ -1,0 +1,11 @@
+extend  type Query {
+    me: Me!
+}
+
+type Me {
+    _id: String!
+    name: String!
+    userName: String!
+    email: String! @auth (requiredRole: Guests)
+    role: String!  @LoggedIn
+}

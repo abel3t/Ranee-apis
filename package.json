@@ -1,0 +1,59 @@
+{
+  "name": "e-commerce-apis",
+  "version": "1.0.0",
+  "author": "Abel Tran",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node --files src/index.ts",
+    "start:test": "cross-env NODE_ENV='test' DB_DATABASE='jira_test' npm start",
+    "start:production": "node -- -r ./tsconfig-paths.js build/index.js",
+    "build": "cd src && tsc",
+    "pre-commit": "lint-staged"
+  },
+  "dependencies": {
+    "@babel/register": "7.0.0",
+    "@graphql-tools/load-files": "^6.2.3",
+    "@graphql-tools/merge": "^6.2.3",
+    "@types/mongoose": "^5.7.36",
+    "apollo-server-express": "^2.17.0",
+    "axios": "^0.20.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "firebase-admin": "^9.2.0",
+    "graphql": "^15.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.10.5",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/graphql": "^14.5.0",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/node": "^12.12.11",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "lint-staged": "^9.4.3",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.2"
+  },
+  "_moduleDirectories": [
+    "src"
+  ],
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

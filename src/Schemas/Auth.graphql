@@ -1,0 +1,33 @@
+extend type Query {
+    createOrder: String
+}
+
+extend type Mutation {
+    register(
+        name: String!
+        email: String!
+        userName: String!
+        password: String!
+    ): User!
+
+    signIn(
+        email: String!
+        password: String!
+    ): User!
+
+    refreshToken(refreshToken: String!): RefreshToken!
+}
+
+type RefreshToken {
+    token: String!
+    refreshToken: String!
+    userId: String!
+}
+
+type User {
+    name: String!
+    userName: String!
+    email: String!
+    token: String!
+    refreshToken: String!
+}
